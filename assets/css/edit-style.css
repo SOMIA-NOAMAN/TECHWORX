@@ -1,0 +1,151 @@
+.text-align-justify 
+   {
+    text-align: justify !important;
+   }
+   .clients img {
+  max-width: 60%;
+  /* filter: grayscale(100); */
+}
+.partners img {
+  max-width: 70%;
+  margin-bottom: 5px;
+  border:2px solid #ccc;
+  /* filter: grayscale(100); */
+}
+#hero ,header,.bg-table{
+    background: #333e51;
+}
+#hero .container {
+    padding: 5px;
+    padding-top: 30px;
+
+}
+ 
+.why-us .accordion-list {
+    padding: 0 30px 0 50px;
+}
+.services .icon-box {
+    padding: 30px;
+}
+.services .icon-box h4 {
+    /* font-weight: 500; */
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+/* news */
+
+.news{
+    width: 160px;
+    /* background-color: #333e51; */
+    
+}
+.news span
+{
+    color:rgb(78, 2, 2);
+}
+.news-scroll a{
+    text-decoration: none;
+    padding-right: 10px;
+    color: #333e51;
+}
+.dot{height: 7px;
+    width: 7px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 2px !important;
+    background-color: rgb(33, 71, 111);
+    border-radius: 50%;
+    display: inline-block;
+}
+   
+/* end news */
+/* projects table */
+#printables
+{
+    overflow-x: auto;
+}
+#printables .table thead th
+{
+border:1px solid #666;
+}
+/* end projects table */
+
+/*-----------first main slider-----------------*/
+.wrapperindex{
+    width:100%;
+  position: relative;
+    }
+.wrapperindex .carouselindex {
+    max-width: 100%;
+    margin-bottom:5px;
+    padding:0;
+	direction:ltr;
+}
+.carouselindex .cardindex
+{    text-align: right;
+    margin: 10px; 
+}
+
+.NextArrow, .PrevArrow {
+  position:absolute;
+  top:50%;
+  transform: translateY(-25px);
+    width: 30px;
+  height: 30px;
+  border:0 none;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align:center;
+  font-size: 20px;
+  font-family: 'FontAwesome';
+  z-index:20;
+  outline: none;
+  opacity: 0.3;
+  transition: all .3s;
+}
+.NextArrow:hover,.PrevArrow:hover {
+  opacity: 1;
+}
+.NextArrow:before{
+  content:'\f105';
+}
+.NextArrow
+{
+    right:30px;
+}
+.PrevArrow {
+   left:30px;
+  }
+.PrevArrow:before{
+  content:'\f104';
+}
+.cardindex .items{
+   text-align: right;
+    z-index: 5;
+}
+.cardindex img{
+height:400px;  
+ width: 100%;   
+}
+/* 
+   .linkindex
+   {
+position:absolute;
+bottom: 10%;
+   } */
+/*---------end first main slider----------------*/
+/*-----------first main slider-----------------*/
+.carouselindex .cardindex
+{ background-color:transparent; 
+}
+.NextArrow , .PrevArrow {
+    background-color: #8d8e8d;
+    color:#FFF;
+ }
+/*---------end first main slider----------------*/
+@media (max-width: 991px) {
+#hero .hero-img img {
+  width: 100%;
+  height: 300px;
+}
+}

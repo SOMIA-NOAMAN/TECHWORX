@@ -23,13 +23,12 @@
 <!-- about us -->
 <?php include 'about-us.html';  ?>
 <!-- end about us -->
-<!--our bussenes -->
-<?php include 'our-bussenis.html';  ?>
-<!-- end our bussenes -->
-
 <!-- services and products -->
 <?php include 'services.html';  ?>
 <!-- end services and products -->
+<!--our bussenes -->
+<?php include 'our-bussenis.html';  ?>
+<!-- end our bussenes -->
 <!-- partners -->
 <?php include 'partners.html';  ?>
 <!-- end partners -->

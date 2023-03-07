@@ -106,7 +106,7 @@ border:1px solid #666;
   opacity: 1;
 }
 .NextArrow:before{
-  content:'\f105';
+  /* content:'\f105'; */
 }
 .NextArrow
 {
@@ -116,7 +116,7 @@ border:1px solid #666;
    left:30px;
   }
 .PrevArrow:before{
-  content:'\f104';
+  /* content:'\f104'; */
 }
 .cardindex .items{
    text-align: right;

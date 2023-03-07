@@ -25,6 +25,8 @@ setTimeout(() => {
                 // looping the returned data
                 Object.keys(resp).map(k => {
                     // creating new table row element
+                    if(resp[k].lang=="ar")
+                    {
                     var tr = $('<tr>')
                         // first column data
                     tr.append('<td class="py-2 px-2 text-center">' + (i++) + '</td>')
@@ -45,6 +47,7 @@ tr.append('<td class="py-1 px-2"><a href="#" target="_blank" onclick="downloadfi
 
                     // Append table row item to table body
                     table.find('tbody').append(tr)
+                    }
                 })
             } else {
                 // If returned json data is empty

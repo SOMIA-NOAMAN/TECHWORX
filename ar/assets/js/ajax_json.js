@@ -22,6 +22,7 @@ setTimeout(() => {
                 // If returned json data is not empty
                 // looping the returned data
                 Object.keys(resp).map(k => {
+                    if(resp[k].lang=="ar")
                 news.append('<span class="dot"></span><a href="#">'+resp[k].content+'</a>')
                 })
             } else {

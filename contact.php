@@ -1,5 +1,62 @@
+    <?php
+require 'PHPMailer/Exception.php';
+  require 'PHPMailer/PHPMailer.php';
+  require 'PHPMailer/SMTP.php';
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\SMTP;
+  use PHPMailer\PHPMailer\Exception;
+  // Create function for send email
+  function sendMail($name,$email,$subject,$message){
+    $to="somiaalshibah@gmail.com";
+    $mail = new PHPMailer();
+    //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    // $mail->CharSet = 'UTF-8';
+    $mail->Host = "stmp.gmail.com";                       // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->SMTPSecure = 'tls'; 
+    $mail->Port = 587; 
+    $mail->Username = '---@gmail.com';                 // SMTP username
+    $mail->Password = '---';                // SMTP password
+    $mail->isHTML(true);                                  // Set email format to HTML
+    // $mail->SMTPOptions = array(
+    //     'ssl' => array(
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //         'allow_self_signed' => true
+    //     )
+    // );
+    $mail->Subject = $subject;
+    $mail->setFrom($email);
+    $mail->Body    = "<b>".$message."</b>";
+    $mail->addAddress($to);           // Add a recipient
+    if($mail->send()) {
+        return true;
+    } else {
+    echo '<script>
+       alert("'.$mail->ErrorInfo.'");</script>';
+        return false;
+    }
+   // $mail->smtpClose();
+}
+ if(isset($_POST['send']))
+{
+$name=$_POST['name']; 
+$email=$_POST['email']; 
+$subject=$_POST['subject']; 
+$message=$_POST['message']; 
+ $flag=sendMail($name,$email,$subject,$message);
+if($flag)
+echo '<script>alert("ok");</script>';
+else {
+    echo '<script>alert("no ok");</script>';
+}
+}
+ 
+
+    ?>
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
   
           <div class="section-title">
@@ -37,7 +94,7 @@
             </div>
   
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form action="" method="post" role="form" class="php-email-form">
+              <form action="index.php" method="post"  class="php-email-form">
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="name">Your Name</label>
@@ -61,46 +118,11 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
                 </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
+                <div class="text-center"><button type="submit" name="send">Send Message</button></div>
               </form>
             </div>
   
           </div>
   
-        </div>
-      </section><!-- End Contact Section -->
-     <?php 
-     // Create function for send email
-
-  function sendMail($to, $msg){
-  require'email/PHPMailer/PHPMailerAutoload.php';
-    $mail = new PHPMailer;
-    //$mail->SMTPDebug = 3;                               // Enable verbose debug output
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->CharSet = 'UTF-8';
-    $mail->Host = 'mail.almahers.com';                       // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'info@almahers.com';                 // SMTP username
-    $mail->Password = 'ayedh2020';                // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 25;                                    // TCP port to connect to
-    $mail->setFrom('info@almahers.com',' مطاعم الماهر');
-    $mail->addAddress($to, 'OTP Verification');           // Add a recipient
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->SMTPOptions = array(
-        'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        )
-    );
-    $mail->Subject = ' رمز التحقق';
-    $mail->Body    = ' هو رمز التحقق للدخول الى موقع مطاعم الماهر يرجى عدم مشاركته مع الاخرين  <b>'.$msg.'</b>';
-
-    if($mail->send()) {
-        return true;
-    } else {
-        return false;
-    }
-}
-     ?>
+        </div
+      </section><!-- End Contact Section --> 

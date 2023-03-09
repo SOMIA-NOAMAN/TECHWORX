@@ -33,7 +33,7 @@
 <?php include 'partners.html';  ?>
 <!-- end partners -->
 <!-- contact -->
-<?php include 'contact.html';  ?>
+<?php include 'contact.php';  ?>
 <!-- end contact -->
 </main>
     <!-- footer -->

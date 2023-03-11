@@ -1,3 +1,61 @@
+<?php
+require 'PHPMailer/Exception.php';
+  require 'PHPMailer/PHPMailer.php';
+  require 'PHPMailer/SMTP.php';
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\SMTP;
+  use PHPMailer\PHPMailer\Exception;
+  // Create function for send email
+  function sendMail($name,$email,$subject,$message){
+    $to="somiaalshibah@gmail.com";
+    $mail = new PHPMailer();
+    //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    // $mail->CharSet = 'UTF-8';
+    $mail->Host = "smtp.gmail.com";                       // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->SMTPSecure = 'tls'; 
+    $mail->Port = 587; 
+    $mail->Username = 'forsan20172017@gmail.com';                 // SMTP username
+    $mail->Password = 'bjuhikbhhfkrglew';                // SMTP password
+    $mail->isHTML(true);                                  // Set email format to HTML
+    // $mail->SMTPOptions = array(
+    //     'ssl' => array(
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //         'allow_self_signed' => true
+    //     )
+    // );
+    $mail->Subject = $subject;
+    $mail->setFrom($email,$name);
+    $mail->addAttachment('assets/img/logo.PNG');
+    $mail->Body    = "<b style='color:darkblue;'>".$message."</b><br>from:".$email;
+    $mail->addAddress($to);           // Add a recipient
+    if($mail->send()) {
+        return true;
+    } else {
+    echo '<script>
+       console.log("'.$mail->ErrorInfo.'");</script>';
+        return false;
+    }
+   // $mail->smtpClose();
+}
+ if(isset($_POST['send']))
+{
+$name=$_POST['name']; 
+$email=$_POST['email']; 
+$subject=$_POST['subject']; 
+$message=$_POST['message']; 
+ $flag=sendMail($name,$email,$subject,$message);
+if($flag)
+echo '<script>alert("Thank you for contacting us. We will answer as soon as possible");</script>';
+else {
+    echo '<script>alert("not send");</script>';
+}
+}
+ 
+
+    ?>
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">

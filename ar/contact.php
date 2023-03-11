@@ -1,4 +1,4 @@
-    <?php
+<?php
 require 'PHPMailer/Exception.php';
   require 'PHPMailer/PHPMailer.php';
   require 'PHPMailer/SMTP.php';
@@ -11,7 +11,7 @@ require 'PHPMailer/Exception.php';
     $mail = new PHPMailer();
     //$mail->SMTPDebug = 3;                               // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    // $mail->CharSet = 'UTF-8';
+    $mail->CharSet = 'UTF-8';
     $mail->Host = "smtp.gmail.com";                       // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->SMTPSecure = 'tls'; 
@@ -48,24 +48,23 @@ $subject=$_POST['subject'];
 $message=$_POST['message']; 
  $flag=sendMail($name,$email,$subject,$message);
 if($flag)
-echo '<script>alert("Thank you for contacting us. We will answer as soon as possible");</script>';
+echo '<script>alert("شكرا لتواصلكم ..سوف نجيب على رسائلكم بأقرب وقت ممكن");</script>';
 else {
-    echo '<script>alert("not send");</script>';
+    echo '<script>alert("لم يتم الارسال حاول مرة أخرى");</script>';
 }
 }
  
 
     ?>
     <!-- ======= Contact Section ======= -->
-     <section id="contact" class="contact">
+    <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
   
           <div class="section-title">
-            <h2>Contact</h2>
+            <h2>اتصل بنا</h2>
             <p>
-                Happy to respond to your inquiries Bhetwasalk us by communicating information or communicate with the following model
-            </p>
-          </div>
+              يسعدنا الرد على استفساراتكم بتواصلكم معنا من خلال توصيل المعلومات أو التواصل مع النموذج التالي
+            </p>  </div>
   
           <div class="row">
   
@@ -73,19 +72,19 @@ else {
               <div class="info">
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
-                  <h4>Location:</h4>
-                  <p> Dhahran Street, Alhassa 36423 - 5642, Kingdom Saudi Arabia</p>
+                  <h4>الموقع:</h4>
+                  <p>شارع الظهران , الأحساء 36423 - 5642, المملكة العربية السعودية </p>
                 </div>
   
                 <div class="email">
                   <i class="bi bi-envelope"></i>
-                  <h4>Email:</h4>
+                  <h4>البريد الالكتروني:</h4>
                   <p>info@tchworx.com</p>
                 </div>
   
                 <div class="phone">
                   <i class="bi bi-phone"></i>
-                  <h4>Call:</h4>
+                  <h4>اتصل:</h4>
                   <p>+ 966 13 5305054 /  + 966 13 5315158</p>
                 </div>
   
@@ -95,35 +94,35 @@ else {
             </div>
   
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form action="index.php" method="post"  class="php-email-form">
+              <form action="index.php" method="post" role="form" class="php-email-form">
                 <div class="row">
                   <div class="form-group col-md-6">
-                    <label for="name">Your Name</label>
+                    <label for="name">اسمك</label>
                     <input type="text" name="name" class="form-control" id="name" required>
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="name">Your Email</label>
+                    <label for="name">بريدك الالكتروني</label>
                     <input type="email" class="form-control" name="email" id="email" required>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="name">Subject</label>
+                  <label for="name">الموضوع</label>
                   <input type="text" class="form-control" name="subject" id="subject" required>
                 </div>
                 <div class="form-group">
-                  <label for="name">Message</label>
+                  <label for="name">الرسالة</label>
                   <textarea class="form-control" name="message" rows="10" required></textarea>
                 </div>
                 <div class="my-3">
-                  <div class="loading">Loading</div>
+                  <div class="loading">تحميل</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="sent-message">تم ارسال رسالتك. شكرًا لك!</div>
                 </div>
-                <div class="text-center"><button type="submit" name="send">Send Message</button></div>
+                <div class="text-center"><button type="submit" name="send">ارســـــال</button></div>
               </form>
             </div>
   
           </div>
   
-        </div
-      </section><!-- End Contact Section --> 
+        </div>
+      </section><!-- End Contact Section -->

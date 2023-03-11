@@ -28,7 +28,7 @@
   <div class="row  m-0 p-0 "> 
   <div class="col-md-12 col-sm-12 p-0">
   
-  <img width="100%" src="assets/img/slider/logo2.PNG" >
+  <img width="100%" src="assets/img/slider/logo2.png" >
               </div>
 
       </div>

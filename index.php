@@ -10,7 +10,7 @@
 <?php include 'include/header.html';  ?>
 <!-- end header -->
 <!-- hero -->
-<?php include 'include/hero.html';  ?>
+<?php include 'include/hero.php';  ?>
 <!-- end hero -->
  <!-- news -->
  <?php include 'news.html';  ?>

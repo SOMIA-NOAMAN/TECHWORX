@@ -25,34 +25,35 @@
   <div class="PrevArrow bx bx-chevron-left"></div>
   </div>
   <div class="carouselindex  owl-carousel  owl-theme">  
-  <div class="cardindex" >
-  <div class="row  m-0 p-0 "> 
-  <div class="col-md-12 col-sm-12 p-0">
-  
-  <img width="100%" src="assets/img/logo2.png" >
-              </div>
-
+    <div class="cardindex" >
+        <div class="row  m-0 p-0 "> 
+        <div class="col-md-12 col-sm-12 p-0">
+        
+        <img width="100%" src="assets/img/slider/logo2.PNG" >
+                    </div>
+      
+            </div>
       </div>
-</div>
+    <!--  -->
+    <?php
+$dir="assets/img/slider/*";
+$images=glob($dir);
+foreach($images as $image)
+{
+    ?>
 <div class="cardindex" >
-  <div class="row  m-0 p-0 "> 
-  <div class="col-md-12 col-sm-12 p-0">
+    <div class="row  m-0 p-0 "> 
+    <div class="col-md-12 col-sm-12 p-0">
+    
+    <img width="100%" src="<?php echo $image;  ?>" >
+                </div>
   
-  <img width="100%" src="assets/img/bussiness/automation-main-service.jpg" >
-              </div>
-
-      </div>
-</div>
-<div class="cardindex" >
-  <div class="row  m-0 p-0 "> 
-  <div class="col-md-12 col-sm-12 p-0">
-  
-  <img width="100%" src="assets/img/bussiness/trading-service-main.jpg" >
-              </div>
-
-      </div>
-</div>
-</div>
+        </div>
+  </div>
+    <?php
+}
+    ?>
+ </div>
       </div>
       </div>
    <!--------end slider--------------->

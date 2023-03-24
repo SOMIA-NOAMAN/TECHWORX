@@ -5,8 +5,9 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>TechWorx<br>
-            Industrial Services
             </h1>
+            <h2> for Industrial Services</h2>
+          
           <h2>Integrity casts quality 
             Innovation leads the 
             future</h2>

@@ -12,6 +12,11 @@
   border:2px solid #ccc;
   /* filter: grayscale(100); */
 }
+.text-logo
+{
+  letter-spacing: 0;
+  font-size:.4em; text-transform: capitalize;margin-left: 10px;
+}
 #hero ,header,.bg-table{
     background: #333e51;
 }
